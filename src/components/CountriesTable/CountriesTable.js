@@ -1,7 +1,7 @@
 import { KeyboardArrowDown, KeyboardArrowUp } from "@material-ui/icons";
 import { useState } from "react";
 import styles from "./CountriesTable.module.css";
-import Link from "next/Link";
+import Link from "next/link";
 
 const orderBy = (countries, value, direction = 'asc') => {
 	return [...countries].sort((a, b) => a[value] > b[value] ? (direction == 'asc' ? 1 : -1): (direction == 'asc' ? -1 : 1));
