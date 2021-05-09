@@ -17,14 +17,17 @@ export default function Home({ countries }) {
 		setKeyword(e.target.value.toLowerCase());
 	}
 
-	return <Layout>
-		<div className={styles.counts}>
-			Found {countries.length} countries
-		</div>
-		<SearchInput placeholder="Filter by name, region, subregion ..." onChange={onInputChange} />
+	return (
+		<Layout>
+			<div className={styles.inputContainer}>
+				<div className={styles.counts}> Found {countries.length} countries </div>
+				<div className={styles.input}>
+					<SearchInput placeholder="Filter by name, region, subregion ..." onChange={onInputChange} />
+				</div>
+			</div>
 
-		<CountriesTable countries={filterdCountries} />
-	</Layout>
+			<CountriesTable countries={filterdCountries} />
+		</Layout>)
 }
 
 export const getServerSideProps = async () => {
